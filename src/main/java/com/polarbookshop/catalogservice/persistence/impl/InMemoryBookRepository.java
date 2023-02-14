@@ -9,8 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class InMemoryBookRepository implements BookRepository {
-    private static final Map<String, Book> books =
-        new ConcurrentHashMap<>();
+    private static final Map<String, Book> books = new ConcurrentHashMap<>();
 
     @Override
     public Iterable<Book> findAll() {
@@ -19,8 +18,9 @@ public class InMemoryBookRepository implements BookRepository {
 
     @Override
     public Optional<Book> findByIsbn(String isbn) {
-        return existsByIsbn(isbn) ? Optional.of(books.get(isbn)) :
-            Optional.empty();
+        return existsByIsbn(isbn)
+            ? Optional.of(books.get(isbn))
+            : Optional.empty();
     }
 
     @Override
