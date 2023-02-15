@@ -1,0 +1,5 @@
+polar:
+  greeting: Welcome to the test book catalog!
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:14.4:///
